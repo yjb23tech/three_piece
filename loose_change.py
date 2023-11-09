@@ -1,5 +1,6 @@
 from player import Player
 from weapon import Cutlass, Axe, Dagger
+from tile import BattleTile
 
 test_player = Player("Monkey D Luffy", "Romance Dawn Island", 29, 1, 1)
 print(test_player)
@@ -16,6 +17,7 @@ test_player.set_weapon()
 #Confirming my weapon selection was successful 
 test_player.get_weapon()
 
-
+test_battle_tile = BattleTile("Dressrosa", "Eastern", 2, 1)
+print(test_battle_tile)
 
 
