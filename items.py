@@ -10,7 +10,7 @@ class Item:
     def __str__(self):
 
         item_details_msg = f"\nThis is the {self.str_item_name} and it belongs to the {self.str_item_type} family of items"
-        item_details_msg += f"\nThis item will cost you {self.int_item_gold_cost}"
+        item_details_msg += f"\nThis item will cost you {self.int_item_gold_cost} gold coins"
 
         return (item_details_msg)
 
