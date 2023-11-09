@@ -27,5 +27,20 @@ class HealingPotion(Item):
         description_msg = f"Using the {self.str_item_name} can raise your total number of health points by {self.int_hp_boost_value}"
         print(description_msg)
 
+class DefenseCharm(Item):
+
+    def __init__(self):
+
+        self.int_def_boost_value = 30 
+
+        super().__init__("Defensive", "Defense Charm", 14)
+    
+    def defense_charm_property_description(self):
+
+        description_msg = f"Using the {self.str_item_name} can raise your defensive guard by {self.int_def_boost_value} points"
+        print(description_msg)
+
+
+
 
 
