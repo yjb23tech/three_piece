@@ -15,8 +15,12 @@ class Player:
         self.weapon_weapon_in_hand = None
         self.arr_weapons_armoury = [Cutlass(), Axe(), Dagger()]
 
+        self.arr_items_inventory = []
+
         self.int_hp = 200
         self.int_def_pwr = randint(5, 10)
+
+        self.int_gold_in_wallet = 200 
     
     def __str__(self):
 
