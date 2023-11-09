@@ -1,4 +1,5 @@
 from player import Player
+from npc import Merchant
 from enemy import Enemy 
 from weapon import Cutlass, Axe, Dagger
 from items import HealingPotion, DefenseCharm
@@ -12,13 +13,10 @@ print(test_player)
 test_trade_tile = TradeTile("Floating Fleamarket", "North Eastern", 2, 2)
 print(test_trade_tile)
 
-test_healing_potion = HealingPotion()
-print(test_healing_potion)
-test_healing_potion.healing_potion_property_description()
+test_merchant = Merchant()
+print(test_merchant)
 
-test_defense_charm = DefenseCharm()
-print(test_defense_charm)
-test_defense_charm.defense_charm_property_description()
+
 
 
 
