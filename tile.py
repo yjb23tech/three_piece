@@ -1,6 +1,7 @@
 from player import Player 
 from random import randint
-from game_text import pre_fight_sequence_msg, starting_fight_sequence_msg, attack_defended_against_msg, attack_not_defended_against_msg, special_attack_msg, tile_boss_defeated_msg 
+import time 
+from game_text import pre_fight_sequence_msg, starting_fight_sequence_msg, attack_defended_against_msg, attack_defended_against_outcome_msg, attack_not_defended_against_msg, special_attack_msg, tile_boss_defeated_msg 
 
 class Tile:
     
@@ -48,15 +49,17 @@ class BattleTile(Tile):
             dice_score = randint(1, 6)
 
             if ((dice_score % 2) != 0):
-                print((attack_defended_against_msg.format(attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.str_weapon_name, defending_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr, defending_avatar.str_name)))
                 resulting_damage = attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr - defending_avatar.int_def_pwr 
+                print((attack_defended_against_msg.format(attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.str_weapon_name, defending_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr, defending_avatar.str_name)))
+                time.sleep(15)
+                print((attack_defended_against_outcome_msg.format(attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr, attacking_avatar.str_name, defending_avatar.str_name, defending_avatar.int_def_pwr)))
             else:
                 if ((round_counter > 2) and (isinstance(attacking_avatar, Player))):
                     resulting_damage = attacking_avatar.weapon_weapon_in_hand.int_weapon_special_atk_pwr_boost + attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr 
-                    print((special_attack_msg.format(attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.str_weapon_special_atk_name, defending_avatar.str_name, resulting_damage)))
+                    print((special_attack_msg.format(attacking_avatar.str_name, (attacking_avatar.weapon_weapon_in_hand.str_weapon_special_atk_name.upper()), defending_avatar.str_name, resulting_damage)))
                 else:
-                    print((attack_not_defended_against_msg.format(attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr, defending_avatar.str_name)))
                     resulting_damage = attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr 
+                    print((attack_not_defended_against_msg.format(attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr, defending_avatar.str_name)))
             
             defending_avatar.int_hp -= resulting_damage
 
@@ -69,10 +72,11 @@ class BattleTile(Tile):
 
             round_counter += 1 
 
+            time.sleep(5)
 
         if (user_player.int_hp <= 0):
             pass
         else:
-            print(((tile_boss_defeated_msg.format(user_player.str_name, user_player.int_hp, tile_boss.str_name, tile_boss.int_hp))))
+            print(((tile_boss_defeated_msg.format(tile_boss.str_name, tile_boss.int_hp, user_player.str_name, user_player.int_hp))))
 
     
