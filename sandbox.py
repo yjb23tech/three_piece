@@ -20,6 +20,10 @@ test_attack_whetstone = AttackWhetstone()
 print(test_attack_whetstone)
 test_attack_whetstone.attack_whetstone_property_description()
 
+test_merchant.display_merchant_inventory()
+
+
+
 
 
 

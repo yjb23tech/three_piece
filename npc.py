@@ -1,4 +1,4 @@
-from items import HealthPotion, DefenseCharm
+from items import HealthPotion, AttackWhetstone, DefenseCharm
 
 class NPC:
 
@@ -17,7 +17,18 @@ class Merchant(NPC):
     def __init__(self):
 
         self.int_gold_in_wallet = 1_000
-        self.arr_items_inventory = [HealthPotion(), DefenseCharm()]
+        self.arr_items_inventory = [HealthPotion(), AttackWhetstone(), DefenseCharm()]
 
         super().__init__("Merchant", "Silvers Raleigh")
+    
+    def display_merchant_inventory(self):
+
+        for x, item in enumerate(self.arr_items_inventory, 1):
+
+            print(f"\n{x}. {item.str_item_name}")
+            print(item)
+
+
+
+
 
