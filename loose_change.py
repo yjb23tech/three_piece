@@ -4,12 +4,18 @@ from weapon import Cutlass, Axe, Dagger
 test_player = Player("Monkey D Luffy", "Romance Dawn Island", 29, 1, 1)
 print(test_player)
 
-test_cutlass = Cutlass()
-print(test_cutlass)
+test_player.show_weapons_in_armoury()
 
-test_axe = Axe()
-print(test_axe)
+#No weapon to begin with
+test_player.get_weapon()
+#Post iniital weapon selection, checking to confirm I have a weapon in hand
+test_player.get_weapon()
 
-test_dagger = Dagger()
-print(test_dagger)
+#Changing my weapon from my current weapon selection
+test_player.set_weapon()
+#Confirming my weapon selection was successful 
+test_player.get_weapon()
+
+
+
 
