@@ -20,6 +20,14 @@ class Tile:
         message += (f"\nThis island is found at co-ordinates [{self.int_tile_loc_x}, {self.int_tile_loc_y}]")
         return message 
 
+class TradeTile(Tile):
+
+    def __init__(self, str_tile_type, str_tile_island_name, str_tile_island_quadrant, int_tile_loc_x, int_tile_loc_y):
+
+        self.npc_tile_island_merchant = None
+
+        super().__init__("Trade Tile", str_tile_island_name, str_tile_island_quadrant, int_tile_loc_x, int_tile_loc_y)
+
 class BattleTile(Tile):
 
     def __init__(self, str_tile_island_name, str_tile_island_quadrant, int_tile_loc_x, int_tile_loc_y):
