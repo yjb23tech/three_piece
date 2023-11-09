@@ -16,17 +16,30 @@ class Tile:
     
     def __str__(self):
 
-        message = (f"\nWelcome to {self.str_tile_island_name} Island in the {self.str_tile_island_quadrant} of the map")
+        message = (f"\nWelcome to {self.str_tile_island_name} Island in the {self.str_tile_island_quadrant} quadrant of the map")
         message += (f"\nThis island is found at co-ordinates [{self.int_tile_loc_x}, {self.int_tile_loc_y}]")
         return message 
 
 class TradeTile(Tile):
 
-    def __init__(self, str_tile_type, str_tile_island_name, str_tile_island_quadrant, int_tile_loc_x, int_tile_loc_y):
+    def __init__(self, str_tile_island_name, str_tile_island_quadrant, int_tile_loc_x, int_tile_loc_y):
 
         self.npc_tile_island_merchant = None
 
         super().__init__("Trade Tile", str_tile_island_name, str_tile_island_quadrant, int_tile_loc_x, int_tile_loc_y)
+
+    def pvp_trade(self, user_player, npc_merchant):
+    
+        pass 
+        #Like any good salesman, the npc_merchant will attempt to market his wares immediately 
+        #Question should be put to user_player to establish whether they're looking to (B)uy or (S)ell
+        #If the former, user_player will use numberpad to select item they'd like to buy 
+        #If gold sufficient, purchase is complete 
+        #Gold is deducted from user_player, gold is added to npc_merchant, item is removed from npc_merchant inventory, item is added to user_player_inventory 
+
+        #If the latter, user_player will then market his wares 
+        #npc_merchant will randomly select some item that npc_merchant has sufficient gold to purchase 
+        #Similar sequence to above takes place 
 
 class BattleTile(Tile):
 
