@@ -47,3 +47,15 @@ class Dagger(Weapon):
 
         super().__init__("Dagger", "Gut Guest")
 
+class StandardEnemyWeapon(Weapon):
+
+    def __init__(self):
+
+        self.int_weapon_atk_pwr = random.randint(15, 25)
+        
+        super().__init__("Machete", "Steel Sorrow")
+    
+    def __str__(self):
+
+        message = f"I'm going to use my {self.str_weapon_type} {self.str_weapon_name} to carve ya ear to ear ya yella bellied bastard!"
+

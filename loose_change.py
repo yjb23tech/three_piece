@@ -1,23 +1,19 @@
 from player import Player
 from weapon import Cutlass, Axe, Dagger
 from tile import BattleTile
+from data_structures import arr_world_map_back_end as world_map_be
+from functions import set_player_name, set_player_origin, set_player_age
 
-test_player = Player("Monkey D Luffy", "Romance Dawn Island", 29, 1, 1)
+test_player = Player(set_player_name(), set_player_origin(), set_player_age(), 1, 1)
 print(test_player)
 
-test_player.show_weapons_in_armoury()
+for x in range(len(world_map_be)):
+    for y in range(len(world_map_be[x])):
+        island = world_map_be[x][y]
+        print(island)
+print(" ")
 
-#No weapon to begin with
-test_player.get_weapon()
-#Post iniital weapon selection, checking to confirm I have a weapon in hand
-test_player.get_weapon()
 
-#Changing my weapon from my current weapon selection
-test_player.set_weapon()
-#Confirming my weapon selection was successful 
-test_player.get_weapon()
 
-test_battle_tile = BattleTile("Dressrosa", "Eastern", 2, 1)
-print(test_battle_tile)
 
 

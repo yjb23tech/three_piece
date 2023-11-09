@@ -1,4 +1,5 @@
 from weapon import Cutlass, Axe, Dagger
+from random import randint
 
 class Player:
 
@@ -14,11 +15,12 @@ class Player:
         self.weapon_weapon_in_hand = None
         self.arr_weapons_armoury = [Cutlass(), Axe(), Dagger()]
 
-        self.int_hp = 100
+        self.int_hp = 200
+        self.int_def_pwr = randint(5, 10)
     
     def __str__(self):
 
-        return (f"Call me Captain {self.str_name} of {self.str_origin} :D")
+        return (f"\nCall me Captain {self.str_name} of {self.str_origin} :D")
     
     def show_weapons_in_armoury(self):
 
