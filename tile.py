@@ -52,7 +52,7 @@ class BattleTile(Tile):
                 resulting_damage = attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr - defending_avatar.int_def_pwr 
                 print((attack_defended_against_msg.format(attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.str_weapon_name, defending_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr, defending_avatar.str_name)))
                 time.sleep(15)
-                print((attack_defended_against_outcome_msg.format(attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr, attacking_avatar.str_name, defending_avatar.str_name, defending_avatar.int_def_pwr)))
+                print((attack_defended_against_outcome_msg.format(attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr, attacking_avatar.str_name, attacking_avatar.weapon_weapon_in_hand.str_weapon_name, defending_avatar.str_name, defending_avatar.int_def_pwr)))
             else:
                 if ((round_counter > 2) and (isinstance(attacking_avatar, Player))):
                     resulting_damage = attacking_avatar.weapon_weapon_in_hand.int_weapon_special_atk_pwr_boost + attacking_avatar.weapon_weapon_in_hand.int_weapon_atk_pwr 
@@ -72,7 +72,7 @@ class BattleTile(Tile):
 
             round_counter += 1 
 
-            time.sleep(5)
+            time.sleep(15)
 
         if (user_player.int_hp <= 0):
             pass
