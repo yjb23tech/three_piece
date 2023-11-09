@@ -14,15 +14,28 @@ class Item:
 
         return (item_details_msg)
 
-class HealingPotion(Item):
+class AttackWhetstone(Item):
+
+    def __init__(self):
+
+        self.int_atk_pwr_boost_value = 40
+
+        super().__init__("Attack", "Whetstone", 50)
+
+    def attack_whetstone_property_description(self):
+
+        description_msg = f"Using the {self.str_item_name} can raise your total attacking power by {self.int_atk_pwr_boost_value} damage points"
+        print(description_msg)
+
+class HealthPotion(Item):
 
     def __init__(self):
 
         self.int_hp_boost_value = 50 
 
-        super().__init__("Healing", "Health Potion", 20)
+        super().__init__("Health", "Health Potion", 20)
     
-    def healing_potion_property_description(self):
+    def health_potion_property_description(self):
 
         description_msg = f"Using the {self.str_item_name} can raise your total number of health points by {self.int_hp_boost_value}"
         print(description_msg)

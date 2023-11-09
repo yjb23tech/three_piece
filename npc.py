@@ -1,4 +1,4 @@
-from items import HealingPotion, DefenseCharm
+from items import HealthPotion, DefenseCharm
 
 class NPC:
 
@@ -16,7 +16,8 @@ class Merchant(NPC):
 
     def __init__(self):
 
-        self.arr_items_inventory = [HealingPotion(), DefenseCharm()]
+        self.int_gold_in_wallet = 1_000
+        self.arr_items_inventory = [HealthPotion(), DefenseCharm()]
 
         super().__init__("Merchant", "Silvers Raleigh")
 

@@ -2,7 +2,7 @@ from player import Player
 from npc import Merchant
 from enemy import Enemy 
 from weapon import Cutlass, Axe, Dagger
-from items import HealingPotion, DefenseCharm
+from items import HealthPotion, AttackWhetstone, DefenseCharm
 from tile import TradeTile, BattleTile
 from data_structures import arr_world_map_back_end as world_map_be
 from functions import set_player_name, set_player_origin, set_player_age
@@ -16,6 +16,9 @@ print(test_trade_tile)
 test_merchant = Merchant()
 print(test_merchant)
 
+test_attack_whetstone = AttackWhetstone()
+print(test_attack_whetstone)
+test_attack_whetstone.attack_whetstone_property_description()
 
 
 
