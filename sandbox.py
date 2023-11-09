@@ -8,6 +8,9 @@ from functions import set_player_name, set_player_origin, set_player_age
 test_player = Player(set_player_name(), set_player_origin(), set_player_age(), 1, 1)
 print(test_player)
 
+test_player.get_weapon()
+test_player.get_weapon()
+
 test_enemy = Enemy("Doffy", 2, 1)
 print(test_enemy)
 
